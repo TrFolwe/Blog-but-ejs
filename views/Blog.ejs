@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Folw - Blog</title>
+    <%- include('./css/BlogStyle.css'); %>
+    <link href="/views/css/BlogStyle.css" type="text/css">
+  </head>
+  <body>
+    <h1>There is <%= blogContents.length %> contect</h1>
+    <div class="blog-container">
+      <% blogContents.forEach(blog => { %>
+        <a id="blog-card">
+          <strong><%=blog.title%></strong>
+          <br><br>
+          <div class="blog-content">
+            <%=blog.content%>
+          </div>
+            <p style="margin-top: 3px"><%=blog.author%><br><%=blog.createdAt%></p>
+        </a>
+      <% }); %>
+    </div>
+  </body>
+</html>
